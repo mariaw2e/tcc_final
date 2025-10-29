@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.caca-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  padding: 20px;
+  font-family: 'Fredoka', sans-serif;
+}
+
+.caca-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.caca-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: rgba(255, 255, 255, 0.95);
+  color: #f5576c;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.caca-back-button:hover {
+  background: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.caca-header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeInDown 0.6s ease;
+}
+
+.caca-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 15px;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+}
+
+.caca-subtitle {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 400;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.caca-difficulty-selection {
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+.caca-difficulty-selection h2 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.caca-difficulty-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.caca-difficulty-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 35px;
+  background: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  font-family: 'Fredoka', sans-serif;
+}
+
+.caca-difficulty-button:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.caca-difficulty-icon {
+  font-size: 4rem;
+}
+
+.caca-difficulty-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f5576c;
+}
+
+.caca-difficulty-info {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.caca-game-area {
+  animation: fadeIn 0.6s ease;
+}
+
+.caca-score-panel {
+  display: flex;
+  justify-content: space-around;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.caca-score-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.caca-score-label {
+  font-size: 1rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.caca-score-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f5576c;
+}
+
+.caca-main-content {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 25px;
+}
+
+.caca-grid {
+  display: grid;
+  gap: 3px;
+  background: white;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  user-select: none;
+  aspect-ratio: 1;
+  max-height: 600px;
+}
+
+.caca-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.caca-cell:hover {
+  background: #e9ecef;
+  transform: scale(1.1);
+}
+
+.caca-cell.selected {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  color: white;
+  transform: scale(1.15);
+  border-color: white;
+  box-shadow: 0 2px 8px rgba(245, 87, 108, 0.4);
+}
+
+.caca-cell.found {
+  background: #d4edda;
+  color: #155724;
+}
+
+.caca-words-list {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.caca-words-list h3 {
+  font-size: 1.4rem;
+  color: #f5576c;
+  margin-bottom: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.caca-words-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.caca-word-item {
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border: 2px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.caca-word-item.found {
+  background: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.caca-word-text {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.caca-word-item.found .caca-word-text {
+  color: #155724;
+  text-decoration: line-through;
+}
+
+.caca-word-hint {
+  font-size: 0.95rem;
+  color: #666;
+  font-style: italic;
+}
+
+.caca-result-card {
+  background: white;
+  border-radius: 25px;
+  padding: 50px 35px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  animation: zoomIn 0.5s ease;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.caca-result-icon {
+  font-size: 6rem;
+  margin-bottom: 20px;
+  animation: bounce 1s infinite;
+}
+
+.caca-result-title {
+  font-size: 2.5rem;
+  color: #f5576c;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.caca-result-message {
+  font-size: 1.3rem;
+  color: #555;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.caca-result-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.caca-stat-item {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 25px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.caca-stat-label {
+  font-size: 0.95rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.caca-stat-value {
+  font-size: 2rem;
+  color: #f5576c;
+  font-weight: 700;
+}
+
+.caca-stat-value.highlight {
+  color: #f093fb;
+}
+
+.caca-result-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.caca-restart-button,
+.caca-home-button {
+  padding: 18px 35px;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: 'Fredoka', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.caca-restart-button {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  color: white;
+}
+
+.caca-home-button {
+  background: #6c757d;
+  color: white;
+}
+
+.caca-restart-button:hover,
+.caca-home-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 1024px) {
+  .caca-main-content {
+    grid-template-columns: 1fr;
+  }
+
+  .caca-words-list {
+    max-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .caca-title {
+    font-size: 2.5rem;
+  }
+
+  .caca-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .caca-grid {
+    gap: 2px;
+    padding: 10px;
+  }
+
+  .caca-cell {
+    font-size: 1rem;
+  }
+
+  .caca-difficulty-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .caca-result-actions {
+    flex-direction: column;
+  }
+}

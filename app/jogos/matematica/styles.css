@@ -1,0 +1,421 @@
+.matematica-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  padding: 2rem;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.matematica-welcome,
+.matematica-game-over {
+  max-width: 800px;
+  margin: 2rem auto;
+  background: white;
+  padding: 3rem;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.6s ease;
+}
+
+.matematica-welcome h1,
+.matematica-game-over h1 {
+  font-size: 3rem;
+  color: #00f2fe;
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}
+
+.matematica-description {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.matematica-instructions {
+  background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+  padding: 2rem;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.matematica-instructions h3 {
+  color: #00838f;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.matematica-instructions ul {
+  list-style: none;
+  padding: 0;
+}
+
+.matematica-instructions li {
+  padding: 0.7rem 0;
+  font-size: 1.1rem;
+  color: #444;
+  border-bottom: 1px solid rgba(0, 131, 143, 0.2);
+}
+
+.matematica-instructions li:last-child {
+  border-bottom: none;
+}
+
+.matematica-difficulty {
+  margin-bottom: 2rem;
+}
+
+.matematica-difficulty h3 {
+  color: #00838f;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.difficulty-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.diff-btn {
+  padding: 1.5rem 1rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.diff-btn span {
+  display: block;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.diff-btn.easy {
+  background: linear-gradient(135deg, #a8e6cf 0%, #56ab2f 100%);
+  color: #1a1a1a;
+}
+
+.diff-btn.medium {
+  background: linear-gradient(135deg, #ffd89b 0%, #ff9a56 100%);
+  color: #1a1a1a;
+}
+
+.diff-btn.hard {
+  background: linear-gradient(135deg, #ff6b6b 0%, #c92a2a 100%);
+  color: white;
+}
+
+.diff-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.matematica-back-btn,
+.matematica-back-link {
+  display: inline-block;
+  color: #00838f;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.8rem 2rem;
+  border: 2px solid #00838f;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.matematica-back-btn:hover,
+.matematica-back-link:hover {
+  background: #00838f;
+  color: white;
+}
+
+.matematica-restart-btn {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  border: none;
+  padding: 1.2rem 3rem;
+  font-size: 1.3rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(79, 172, 254, 0.4);
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.matematica-restart-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(79, 172, 254, 0.6);
+}
+
+.matematica-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.matematica-score {
+  display: flex;
+  gap: 2rem;
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.matematica-score span {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #00838f;
+}
+
+.matematica-game {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 3rem;
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.6s ease;
+}
+
+.matematica-question {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.matematica-question h2 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 2rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+}
+
+.matematica-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.visual-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.emoji-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  max-width: 200px;
+}
+
+.emoji-item {
+  font-size: 2.5rem;
+  animation: pop 0.5s ease;
+}
+
+@keyframes pop {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.number-label {
+  font-size: 2rem;
+  font-weight: 900;
+  color: #00838f;
+  background: #e0f7fa;
+  padding: 0.5rem 1.5rem;
+  border-radius: 15px;
+}
+
+.operator,
+.equals,
+.question-mark {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #4facfe;
+}
+
+.question-mark {
+  font-size: 4rem;
+  color: #ff9a56;
+  animation: pulse 1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.matematica-expression {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%);
+  border-radius: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.matematica-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.matematica-option-btn {
+  background: linear-gradient(135deg, #ffd89b 0%, #ff9a56 100%);
+  color: #1a1a1a;
+  border: 4px solid #ff8c42;
+  border-radius: 20px;
+  padding: 2rem;
+  font-size: 2.5rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 154, 86, 0.4);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.matematica-option-btn:hover:not(:disabled) {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(255, 154, 86, 0.6);
+  background: linear-gradient(135deg, #ffe4b5 0%, #ffb56b 100%);
+}
+
+.matematica-option-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.matematica-feedback {
+  padding: 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  animation: fadeIn 0.5s ease;
+  border: 3px solid;
+}
+
+.matematica-feedback.correct {
+  background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+  color: #155724;
+  border-color: #28a745;
+}
+
+.matematica-feedback.incorrect {
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+  color: #721c24;
+  border-color: #dc3545;
+}
+
+.matematica-final-score {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 20px;
+  margin: 2rem 0;
+}
+
+.matematica-final-score h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.matematica-final-score p {
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
+}
+
+.matematica-feedback-final {
+  font-size: 1.3rem;
+  color: #555;
+  margin: 1.5rem 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .matematica-container {
+    padding: 1rem;
+  }
+
+  .matematica-welcome,
+  .matematica-game-over,
+  .matematica-game {
+    padding: 2rem 1rem;
+  }
+
+  .matematica-welcome h1,
+  .matematica-game-over h1 {
+    font-size: 2rem;
+  }
+
+  .difficulty-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .emoji-item {
+    font-size: 2rem;
+  }
+
+  .matematica-expression {
+    font-size: 2rem;
+  }
+
+  .matematica-options {
+    grid-template-columns: 1fr;
+  }
+
+  .matematica-option-btn {
+    font-size: 2rem;
+  }
+
+  .matematica-score {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}

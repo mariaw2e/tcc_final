@@ -311,15 +311,6 @@ export default function TestimonialsSection() {
             ))}
           </div>
         </div>
-
-        {/* Call to Action */}
-        <div className="testimonials-cta">
-          <div className="cta-content">
-            <h2>Compartilhe Sua História</h2>
-            <p>Sua jornada pode inspirar e ajudar outras pessoas da nossa comunidade. Compartilhe sua experiência conosco!</p>
-            <button className="cta-button">Enviar Depoimento</button>
-          </div>
-        </div>
       </div>
     </section>
   );

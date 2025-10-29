@@ -1,6 +1,8 @@
 "use client";
 
+
 import Header from "./components/Header";
+import HeroBanner from "./components/HeroBanner";
 import SearchSection from "./components/SearchSection";
 import ServicesSection from "./components/ServicesSection";
 import ThemeList from "./components/ThemeList";
@@ -13,6 +15,7 @@ export default function Home() {
   return (
     <>
       <Header />
+      <HeroBanner />
       <SearchSection />
       <ServicesSection />
       <div className="background-continuity">

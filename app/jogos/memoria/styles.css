@@ -1,4 +1,22 @@
 /* Jogo da Memória - Estilos */
+.back-to-games {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 12px 24px;
+  background: #F6B600;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.back-to-games:hover {
+  background: #e0a500;
+  transform: translateX(-5px);
+}
+
 .memoria-container {
   max-width: 1200px;
   margin: 0 auto;

@@ -2,8 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
 import './styles.css'
 
 // Tipos para o quebra-cabeças
@@ -485,7 +483,6 @@ export default function QuebraCabeca() {
 
   return (
     <div className="puzzle-container">
-      <Header />
 
       {/* Hero Section */}
       <section className="puzzle-hero">
@@ -818,8 +815,6 @@ export default function QuebraCabeca() {
           </div>
         )}
       </main>
-
-      <Footer />
     </div>
   )
 }

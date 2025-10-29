@@ -53,17 +53,132 @@
 }
 
 .menu a {
-    padding-left: 28px;
     text-decoration: none;
     font-size: 14px;
+    font-weight: 500;
     transition: color 0.3s ease;
     color: #071D3B;
+    position: relative;
+    padding: 5px 10px;
+}
+
+.menu a:hover {
+    color: #F6B600;
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    right: 10px;
+    height: 2px;
+    background: #F6B600;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.menu a:hover::after {
+    transform: scaleX(1);
 }
 
 .auth-buttons {
     display: flex;
     gap: 10px;
     margin-left: auto;
+    align-items: center;
+}
+
+.auth-btn {
+    background: #F6B600;
+    color: #071D3B;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+}
+
+.auth-btn:hover {
+    background: #e0a500;
+    transform: translateY(-1px);
+}
+
+/* Botão Conecte-se - estilo original */
+.conecte-btn {
+    background: #F6B600;
+    color: #071D3B;
+}
+
+.conecte-btn:hover {
+    background: #e0a500;
+}
+
+/* Botão Cadastrar - estilo original */
+.cadastrar-btn {
+    background: #F6B600;
+    color: #071D3B;
+}
+
+.cadastrar-btn:hover {
+    background: #e0a500;
+}
+
+/* Botão do usuário logado */
+.user-btn {
+  background: #071D3B;
+  color: #F6B600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px 6px 6px;
+}
+
+.user-btn:hover {
+  background: #0a2850;
+  transform: translateY(-1px);
+}
+
+.user-initial {
+  width: 28px;
+  height: 28px;
+  background: #F6B600;
+  color: #071D3B;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  flex-shrink: 0;
+}
+
+.user-avatar-img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 14px;
+}/* Botão Sair */
+.logout-btn {
+    background: transparent;
+    border: 2px solid #F6B600;
+    color: #071D3B;
+    padding: 6px 16px;
+}
+
+.logout-btn:hover {
+    background: #F6B600;
+    color: #071D3B;
+    transform: translateY(-1px);
 }
 
 .btn {

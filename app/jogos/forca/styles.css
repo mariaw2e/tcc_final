@@ -1,5 +1,23 @@
 /* Estilos específicos para o Jogo da Forca */
 
+.back-to-games {
+  display: inline-block;
+  margin: 20px;
+  padding: 12px 24px;
+  background: #F6B600;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.back-to-games:hover {
+  background: #e0a500;
+  transform: translateX(-5px);
+}
+
 .forca-container {
   min-height: 100vh;
   background: linear-gradient(135deg, #071D3B 0%, #0A2B5C 50%, #071D3B 100%);

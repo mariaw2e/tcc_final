@@ -13,8 +13,8 @@
 /* === MAIN CONTAINER === */
 .jogos-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #854d0e 0%, #a16207 50%, #ca8a04 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, #F6B600 0%, #FFC107 50%, #FFD54F 100%);
+  color: #78350f;
   font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   position: relative;
   overflow-x: hidden;
@@ -28,8 +28,8 @@
   right: 0;
   bottom: 0;
   background: 
-    radial-gradient(circle at 20% 30%, rgba(202, 138, 4, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(161, 98, 7, 0.12) 0%, transparent 50%);
+    radial-gradient(circle at 20% 30%, rgba(246, 182, 0, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 193, 7, 0.12) 0%, transparent 50%);
   pointer-events: none;
   z-index: 1;
 }
@@ -40,6 +40,7 @@
   padding: 6rem 2rem 4rem;
   overflow: hidden;
   z-index: 2;
+  background: transparent;
 }
 
 .jogos-hero-background {
@@ -49,6 +50,7 @@
   right: 0;
   bottom: 0;
   z-index: -2;
+  display: none;
 }
 
 .jogos-hero-pattern {
@@ -59,6 +61,7 @@
   bottom: 0;
   background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.08'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   animation: patternFloat 20s linear infinite;
+  display: none;
 }
 
 .jogos-hero-gradient {
@@ -72,6 +75,7 @@
     rgba(255, 107, 53, 0.15) 50%, 
     rgba(139, 92, 246, 0.15) 100%
   );
+  display: none;
 }
 
 .jogos-hero-content {
@@ -148,7 +152,7 @@
 }
 
 .title-gradient {
-  background: linear-gradient(135deg, #fbbf24 0%, #fcd34d 100%);
+  background: linear-gradient(135deg, #78350f 0%, #92400e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -156,7 +160,7 @@
 }
 
 .title-highlight {
-  background: linear-gradient(135deg, #fde68a 0%, #fef3c7 100%);
+  background: linear-gradient(135deg, #78350f 0%, #854d0e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -166,11 +170,11 @@
 .jogos-hero-subtitle {
   font-size: 1.25rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.95);
+  color: #78350f;
   max-width: 800px;
   margin: 0 auto 3rem;
-  font-weight: 400;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: 500;
+  text-shadow: none;
 }
 
 .jogos-hero-features {
@@ -284,7 +288,7 @@
 
 .stat-label {
   font-size: 0.95rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: #78350f;
   font-weight: 500;
 }
 
@@ -309,6 +313,7 @@
   padding: 3rem 2rem;
   position: relative;
   z-index: 2;
+  background: transparent;
 }
 
 .filters-container {
@@ -335,31 +340,31 @@
   left: 1rem;
   top: 50%;
   transform: translateY(-50%);
-  color: rgba(255, 255, 255, 0.5);
+  color: #f97316;
   z-index: 2;
 }
 
 .search-input {
   width: 100%;
   padding: 1rem 1rem 1rem 3rem;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 2px solid #fbbf24;
   border-radius: 25px;
-  color: #ffffff;
+  color: #78350f;
   font-size: 1rem;
   transition: all 0.3s ease;
 }
 
 .search-input:focus {
   outline: none;
-  border-color: rgba(251, 191, 36, 0.7);
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.2);
+  border-color: #f97316;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
 }
 
 .search-input::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(120, 53, 15, 0.6);
 }
 
 .search-clear {
@@ -367,12 +372,12 @@
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.2);
+  background: #f97316;
   border: none;
   border-radius: 50%;
   width: 24px;
   height: 24px;
-  color: #ffffff;
+  color: white;
   cursor: pointer;
   font-size: 1rem;
   display: flex;
@@ -382,7 +387,8 @@
 }
 
 .search-clear:hover {
-  background: rgba(239, 68, 68, 0.8);
+  background: #ea580c;
+  transform: translateY(-50%) scale(1.1);
 }
 
 .categories-section {
@@ -402,12 +408,12 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(120, 53, 15, 0.15);
   backdrop-filter: blur(10px);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(120, 53, 15, 0.3);
   border-radius: 20px;
   padding: 0.75rem 1.25rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: #78350f;
   font-size: 0.9rem;
   font-weight: 600;
   cursor: pointer;
@@ -416,17 +422,17 @@
 }
 
 .category-pill:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(161, 98, 7, 0.25);
   transform: translateY(-2px);
-  color: #ffffff;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+  color: #78350f;
+  box-shadow: 0 4px 12px rgba(120, 53, 15, 0.3);
 }
 
 .category-pill.active {
-  background: linear-gradient(135deg, #eab308 0%, #fbbf24 100%);
-  border-color: rgba(234, 179, 8, 0.5);
+  background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
+  border-color: rgba(234, 88, 12, 0.5);
   color: #78350f;
-  box-shadow: 0 4px 20px rgba(234, 179, 8, 0.5);
+  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.5);
 }
 
 .category-icon {
@@ -459,7 +465,7 @@
 
 .filter-label {
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: #78350f;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -476,7 +482,7 @@
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 15px;
-  color: #ffffff;
+  color: #78350f;
   font-size: 0.9rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -495,7 +501,7 @@
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
-  color: rgba(255, 255, 255, 0.5);
+  color: #78350f;
   pointer-events: none;
   font-size: 0.8rem;
 }
@@ -509,7 +515,7 @@
 }
 
 .results-text {
-  color: rgba(255, 255, 255, 0.8);
+  color: #78350f;
   font-size: 0.9rem;
   font-weight: 500;
 }
@@ -651,7 +657,7 @@
 
 .game-category-badge {
   background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-  color: #ffffff;
+  color: #78350f;
   padding: 0.5rem 1rem;
   border-radius: 15px;
   font-size: 0.8rem;
@@ -672,13 +678,13 @@
 .game-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #78350f;
   margin-bottom: 1rem;
   line-height: 1.3;
 }
 
 .game-description {
-  color: rgba(255, 255, 255, 0.8);
+  color: #78350f;
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
@@ -694,7 +700,7 @@
 
 .tag-pill {
   background: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.8);
+  color: #78350f;
   padding: 0.25rem 0.75rem;
   border-radius: 12px;
   font-size: 0.8rem;
@@ -705,7 +711,7 @@
 
 .tag-pill:hover {
   background: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
+  color: #78350f;
 }
 
 .game-meta {
@@ -721,7 +727,7 @@
   align-items: center;
   gap: 0.5rem;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: #78350f;
 }
 
 .meta-icon {
@@ -761,7 +767,7 @@
 .benefits-title {
   font-size: 0.85rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
+  color: #78350f;
   margin-bottom: 0.5rem;
 }
 
@@ -773,7 +779,7 @@
 
 .benefit-item {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: #78350f;
   line-height: 1.4;
 }
 
@@ -813,7 +819,7 @@
 
 .play-button.coming-soon {
   background: linear-gradient(135deg, #64748b 0%, #475569 100%);
-  color: rgba(255, 255, 255, 0.8);
+  color: #78350f;
   cursor: not-allowed;
 }
 
@@ -926,7 +932,7 @@
   margin-bottom: 2rem;
   font-size: 0.9rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.9);
+  color: #78350f;
 }
 
 .pablo-title {
@@ -948,14 +954,14 @@
   display: block;
   font-size: clamp(1.2rem, 3vw, 1.5rem);
   font-weight: 400;
-  color: rgba(255, 255, 255, 0.8);
+  color: #78350f;
   font-style: italic;
 }
 
 .pablo-description {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
+  color: #78350f;
 }
 
 .pablo-episodes-grid {
@@ -1084,7 +1090,7 @@
 
 .episode-badge {
   background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-  color: #ffffff;
+  color: #78350f;
   padding: 0.4rem 0.8rem;
   border-radius: 12px;
   font-size: 0.8rem;
@@ -1095,7 +1101,7 @@
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: #78350f;
   font-size: 0.85rem;
   font-weight: 500;
 }
@@ -1103,13 +1109,13 @@
 .episode-title {
   font-size: 1.3rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #78350f;
   margin-bottom: 1rem;
   line-height: 1.3;
 }
 
 .episode-description {
-  color: rgba(255, 255, 255, 0.8);
+  color: #78350f;
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
@@ -1122,7 +1128,7 @@
 .topics-label {
   font-size: 0.85rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
+  color: #78350f;
   margin-bottom: 0.5rem;
 }
 
@@ -1134,7 +1140,7 @@
 
 .topic-tag {
   background: rgba(59, 130, 246, 0.2);
-  color: rgba(255, 255, 255, 0.9);
+  color: #78350f;
   padding: 0.3rem 0.7rem;
   border-radius: 10px;
   font-size: 0.8rem;
@@ -1152,7 +1158,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: #78350f;
   font-size: 0.85rem;
   font-weight: 500;
 }
@@ -1162,7 +1168,7 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   padding: 0.5rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: #78350f;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -1187,12 +1193,12 @@
 .cta-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #78350f;
   margin-bottom: 1rem;
 }
 
 .cta-description {
-  color: rgba(255, 255, 255, 0.8);
+  color: #78350f;
   font-size: 1rem;
   line-height: 1.6;
   margin-bottom: 2rem;
@@ -1214,7 +1220,7 @@
   gap: 0.5rem;
   font-size: 0.9rem;
   font-weight: 500;
-  color: rgba(255, 255, 255, 0.8);
+  color: #78350f;
 }
 
 /* === EMPTY STATE === */
@@ -1241,7 +1247,7 @@
 }
 
 .empty-description {
-  color: rgba(255, 255, 255, 0.8);
+  color: #78350f;
   font-size: 1.1rem;
   line-height: 1.6;
   max-width: 500px;
@@ -1322,7 +1328,7 @@
 .benefits-subtitle {
   font-size: 1.1rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.8);
+  color: #78350f;
 }
 
 .benefits-grid {
@@ -1401,7 +1407,7 @@
   z-index: 2;
   font-size: 1.3rem;
   font-weight: 700;
-  color: #ffffff;
+  color: #78350f;
   margin-bottom: 1rem;
   line-height: 1.3;
 }
@@ -1409,7 +1415,7 @@
 .benefit-description {
   position: relative;
   z-index: 2;
-  color: rgba(255, 255, 255, 0.8);
+  color: #78350f;
   font-size: 0.95rem;
   line-height: 1.6;
   margin-bottom: 1.5rem;
@@ -1426,7 +1432,7 @@
 
 .feature {
   background: rgba(34, 197, 94, 0.2);
-  color: rgba(255, 255, 255, 0.9);
+  color: #78350f;
   padding: 0.4rem 0.8rem;
   border-radius: 12px;
   font-size: 0.8rem;
@@ -1598,7 +1604,7 @@
 @media (prefers-contrast: high) {
   .jogos-container {
     background: #000000;
-    color: #ffffff;
+    color: #78350f;
   }
   
   .game-card-premium,

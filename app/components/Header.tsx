@@ -3,13 +3,48 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import "./Header.css";
 
 export default function Header() {
   const h1Ref = useRef(null);
   const [title, setTitle] = useState("BrainWave Connect");
+  const [user, setUser] = useState<{ name: string; email: string } | null>(null);
+  const [profileImage, setProfileImage] = useState<string | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
+    // Verificar se o usuário está logado
+    const userString = localStorage.getItem('user');
+    if (userString) {
+      try {
+        const userData = JSON.parse(userString);
+        setUser(userData);
+        
+        // Carregar foto de perfil
+        const savedImage = localStorage.getItem(`profileImage_${userData.email}`);
+        if (savedImage) {
+          setProfileImage(savedImage);
+        }
+      } catch (error) {
+        console.error('Erro ao ler dados do usuário:', error);
+      }
+    }
+
+    // Atualizar foto de perfil quando mudar
+    const handleStorageChange = () => {
+      const userString = localStorage.getItem('user');
+      if (userString) {
+        const userData = JSON.parse(userString);
+        const savedImage = localStorage.getItem(`profileImage_${userData.email}`);
+        setProfileImage(savedImage);
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    // Também escutar mudanças customizadas
+    window.addEventListener('profileImageChanged', handleStorageChange);
+
     // Função para garantir que o texto seja "BrainWave Connect"
     const fixText = () => {
       if (h1Ref.current && h1Ref.current.textContent !== "BrainWave Connect") {
@@ -53,9 +88,17 @@ export default function Header() {
         clearTimeout(timer1);
         clearTimeout(timer2);
         clearTimeout(timer3);
+        window.removeEventListener('storage', handleStorageChange);
+        window.removeEventListener('profileImageChanged', handleStorageChange);
       };
     }
   }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    setUser(null);
+    router.push('/');
+  };
 
   return (
     <header className="header" id="mainHeader">
@@ -80,18 +123,38 @@ export default function Header() {
         </Link>
         <nav className="menu">
           <Link href="/sobre">Sobre</Link>
-          <Link href="/#temas-populares">Artigos</Link>
+          <Link href="/artigos">Artigos</Link>
           <Link href="/depoimentos">Depoimentos</Link>
           <Link href="/jogos">Jogos</Link>
           <Link href="/#contato">Contato</Link>
         </nav>
         <div className="auth-buttons">
-          <Link href="/login">
-            <button className="auth-btn">Conecte-se</button>
-          </Link>
-          <Link href="/cadastro">
-            <button className="auth-btn">Cadastrar</button>
-          </Link>
+          {user ? (
+            <>
+              <Link href="/perfil">
+                <button className="auth-btn user-btn">
+                  {profileImage ? (
+                    <img src={profileImage} alt="Perfil" className="user-avatar-img" />
+                  ) : (
+                    <span className="user-initial">{user.name.charAt(0).toUpperCase()}</span>
+                  )}
+                  <span className="user-name">{user.name.split(' ')[0]}</span>
+                </button>
+              </Link>
+              <button className="auth-btn logout-btn" onClick={handleLogout}>
+                Sair
+              </button>
+            </>
+          ) : (
+            <>
+              <Link href="/login">
+                <button className="auth-btn conecte-btn">Conecte-se</button>
+              </Link>
+              <Link href="/cadastro">
+                <button className="auth-btn cadastrar-btn">Cadastrar</button>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </header>

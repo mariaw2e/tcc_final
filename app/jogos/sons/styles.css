@@ -1,0 +1,152 @@
+.sons-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.sons-container {
+  flex: 1;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+  min-height: 80vh;
+}
+
+.sons-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 30px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.sons-content h1 {
+  text-align: center;
+  color: #667eea;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.sons-description {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.sons-welcome {
+  text-align: center;
+}
+
+.sons-instructions {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e3e7f0 100%);
+  padding: 2rem;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  text-align: left;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sons-instructions h3 {
+  color: #667eea;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.sons-instructions ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sons-instructions li {
+  padding: 0.8rem 0;
+  font-size: 1.1rem;
+  color: #444;
+  border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+}
+
+.sons-instructions li:last-child {
+  border-bottom: none;
+}
+
+.btn-start,
+.btn-restart {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1.2rem 3rem;
+  font-size: 1.3rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+  margin: 1rem 0.5rem;
+  font-weight: 700;
+}
+
+.btn-start:hover,
+.btn-restart:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+}
+
+.btn-back {
+  display: inline-block;
+  color: #667eea;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 1rem 2.5rem;
+  border: 2px solid #667eea;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  margin: 0.5rem;
+}
+
+.btn-back:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-3px);
+}
+
+.sons-game {
+  text-align: center;
+  padding: 2rem;
+}
+
+.sons-score {
+  font-size: 1.5rem;
+  color: #667eea;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+
+.sons-info {
+  background: #f5f7fa;
+  padding: 2rem;
+  border-radius: 20px;
+}
+
+.sons-info p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .sons-content {
+    padding: 2rem 1rem;
+  }
+
+  .sons-content h1 {
+    font-size: 2rem;
+  }
+
+  .sons-description {
+    font-size: 1.1rem;
+  }
+}

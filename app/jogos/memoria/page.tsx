@@ -2,8 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
 import './styles.css'
 
 // Lista de emoções expandida com conceitos de neurodivergência
@@ -225,9 +223,12 @@ export default function MemoryGame() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white">
-      <Header />
-
       <main className="memoria-container">
+        {/* Botão Voltar */}
+        <Link href="/jogos" className="back-to-games">
+          ← Voltar aos Jogos
+        </Link>
+
         {/* Hero Section */}
         <div className="memoria-hero">
           <h1 className="memoria-title">
@@ -355,8 +356,6 @@ export default function MemoryGame() {
           </div>
         )}
       </main>
-
-      <Footer />
     </div>
   )
 }

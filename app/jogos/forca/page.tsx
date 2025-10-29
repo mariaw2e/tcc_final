@@ -2,8 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
-import Header from '../../components/Header'
-import Footer from '../../components/Footer'
 import './styles.css'
 
 // Palavras educativas para crianças neurodivergentes por faixa etária
@@ -597,7 +595,10 @@ export default function JogoForca() {
 
   return (
     <div className="forca-container">
-      <Header />
+      {/* Botão Voltar */}
+      <Link href="/jogos" className="back-to-games">
+        ← Voltar aos Jogos
+      </Link>
 
       {/* Hero Section */}
       <section className="forca-hero">
@@ -774,8 +775,6 @@ export default function JogoForca() {
           </div>
         )}
       </main>
-
-      <Footer />
     </div>
   )
 }
