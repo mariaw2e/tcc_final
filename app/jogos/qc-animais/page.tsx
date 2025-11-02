@@ -13,12 +13,12 @@ interface Puzzle {
 }
 
 const puzzles: Puzzle[] = [
-  { id: 1, name: 'Le�o', emoji: '??', difficulty: 'easy', pieces: 4 },
-  { id: 2, name: 'Elefante', emoji: '??', difficulty: 'easy', pieces: 4 },
-  { id: 3, name: 'Panda', emoji: '??', difficulty: 'medium', pieces: 6 },
-  { id: 4, name: 'Tigre', emoji: '??', difficulty: 'medium', pieces: 6 },
-  { id: 5, name: 'Urso', emoji: '??', difficulty: 'hard', pieces: 9 },
-  { id: 6, name: 'Raposa', emoji: '??', difficulty: 'hard', pieces: 9 }
+  { id: 1, name: 'Leão', emoji: '🦁', difficulty: 'easy', pieces: 4 },
+  { id: 2, name: 'Elefante', emoji: '🐘', difficulty: 'easy', pieces: 4 },
+  { id: 3, name: 'Panda', emoji: '🐼', difficulty: 'medium', pieces: 6 },
+  { id: 4, name: 'Tigre', emoji: '🐯', difficulty: 'medium', pieces: 6 },
+  { id: 5, name: 'Urso', emoji: '🐻', difficulty: 'hard', pieces: 9 },
+  { id: 6, name: 'Raposa', emoji: '🦊', difficulty: 'hard', pieces: 9 }
 ];
 
 export default function QuebraCabecaPage() {
@@ -99,21 +99,21 @@ export default function QuebraCabecaPage() {
     return (
       <div className="qc-container">
         <div className="qc-welcome">
-          <h1>?Quebra-Cabe�a de Animais</h1>
+          <h1>🧩 Quebra-Cabeça de Animais</h1>
           <p className="qc-description">
-            Monte quebra-cabe�as com seus animais favoritos! Desenvolva paci�ncia e coordena��o.
+            Monte quebra-cabeças com seus animais favoritos! Desenvolva paciência e coordenação.
           </p>
           <div className="qc-instructions">
             <h3>Como Jogar:</h3>
             <ul>
-              <li>?Escolha um quebra-cabe�a</li>
-              <li>?Clique nas pe�as na ordem correta</li>
-              <li>Cada pe�a correta fica destacada</li>
-              <li>?Complete o mais r�pido poss�vel!</li>
+              <li>🎯 Escolha um quebra-cabeça</li>
+              <li>👆 Clique nas peças na ordem correta</li>
+              <li>Cada peça correta fica destacada</li>
+              <li>⏱️ Complete o mais rápido possível!</li>
             </ul>
           </div>
           <div className="qc-selection">
-            <h3>Escolha um Quebra-Cabe�a:</h3>
+            <h3>Escolha um Quebra-Cabeça:</h3>
             <div className="puzzle-grid">
               {puzzles.map(puzzle => (
                 <button
@@ -124,19 +124,19 @@ export default function QuebraCabecaPage() {
                   <span className="puzzle-emoji">{puzzle.emoji}</span>
                   <h4>{puzzle.name}</h4>
                   <span className="puzzle-info">
-                    {puzzle.pieces} pe�as
+                    {puzzle.pieces} peças
                   </span>
                   <span className="puzzle-difficulty">
-                    {puzzle.difficulty === 'easy' && '?F�cil'}
-                    {puzzle.difficulty === 'medium' && '?M�dio'}
-                    {puzzle.difficulty === 'hard' && '?? Dif�cil'}
+                    {puzzle.difficulty === 'easy' && '🟢 Fácil'}
+                    {puzzle.difficulty === 'medium' && '🟡 Médio'}
+                    {puzzle.difficulty === 'hard' && '🔴 Difícil'}
                   </span>
                 </button>
               ))}
             </div>
           </div>
           <Link href="/jogos" className="qc-back-btn">
-            ? Voltar aos Jogos
+            ← Voltar aos Jogos
           </Link>
         </div>
       </div>
@@ -148,27 +148,27 @@ export default function QuebraCabecaPage() {
     return (
       <div className="qc-container">
         <div className="qc-game-over">
-          <h1>?Parab�ns!</h1>
+          <h1>🎉 Parabéns!</h1>
           <div className="qc-completion">
             <div className="completed-animal">{selectedPuzzle.emoji}</div>
-            <h2>Voc� completou o quebra-cabe�a!</h2>
+            <h2>Você completou o quebra-cabeça!</h2>
           </div>
           <div className="qc-final-score">
             <p><strong>Animal:</strong> {selectedPuzzle.name}</p>
-            <p><strong>Pe�as:</strong> {selectedPuzzle.pieces}</p>
+            <p><strong>Peças:</strong> {selectedPuzzle.pieces}</p>
             <p><strong>Tempo:</strong> {timeSpent} segundos</p>
             <p><strong>Pontos:</strong> {score + 10}</p>
           </div>
           <div className="qc-feedback">
-            {timeSpent < 30 && <p>? Impressionante! Voc� foi super r�pido!</p>}
-            {timeSpent >= 30 && timeSpent < 60 && <p>?Muito bem! �tima concentra��o!</p>}
-            {timeSpent >= 60 && <p>?Parab�ns! Voc� conseguiu!</p>}
+            {timeSpent < 30 && <p>⚡ Impressionante! Você foi super rápido!</p>}
+            {timeSpent >= 30 && timeSpent < 60 && <p>👏 Muito bem! Ótima concentração!</p>}
+            {timeSpent >= 60 && <p>🌟 Parabéns! Você conseguiu!</p>}
           </div>
           <button onClick={restartGame} className="qc-restart-btn">
             Escolher Outro?
           </button>
           <Link href="/jogos" className="qc-back-btn">
-            ? Voltar aos Jogos
+            ← Voltar aos Jogos
           </Link>
         </div>
       </div>
@@ -180,9 +180,9 @@ export default function QuebraCabecaPage() {
   return (
     <div className="qc-container">
       <div className="qc-header">
-        <Link href="/jogos" className="qc-back-link">? Voltar</Link>
+        <Link href="/jogos" className="qc-back-link">← Voltar</Link>
         <div className="qc-score">
-          <span>?{selectedPuzzle?.name}</span>
+          <span>🐾 {selectedPuzzle?.name}</span>
           <span>{solvedPieces.size}/{selectedPuzzle?.pieces}</span>
         </div>
       </div>
@@ -206,7 +206,7 @@ export default function QuebraCabecaPage() {
                 disabled={isSolved}
               >
                 {isSolved ? (
-                  <span className="piece-solved">?</span>
+                  <span className="piece-solved">✓</span>
                 ) : (
                   <span className="piece-number">{piece + 1}</span>
                 )}
@@ -216,7 +216,7 @@ export default function QuebraCabecaPage() {
         </div>
 
         <div className="qc-hint">
-          <p>?Dica: Clique nas pe�as numeradas na ordem de 1 a {selectedPuzzle?.pieces}!</p>
+          <p>💡 Dica: Clique nas peças numeradas na ordem de 1 a {selectedPuzzle?.pieces}!</p>
         </div>
       </div>
     </div>

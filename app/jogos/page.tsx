@@ -13,6 +13,7 @@ interface Game {
   difficulty: 'Fácil' | 'Médio' | 'Difícil';
   ageGroup: string;
   icon: string;
+  image?: string;
   benefits: string[];
   link: string;
   tags: string[];
@@ -40,6 +41,7 @@ const games: Game[] = [
     difficulty: 'Fácil',
     ageGroup: '4-12 anos',
     icon: '🧠',
+    image: 'https://i.pinimg.com/1200x/42/8b/3f/428b3fd43c2f3369d2b558661b9546b9.jpg',
     benefits: ['Melhora a concentração', 'Desenvolve memória visual', 'Reconhecimento emocional', 'Autocontrole'],
     link: '/jogos/memoria',
     tags: ['emoções', 'concentração', 'visual'],
@@ -53,6 +55,7 @@ const games: Game[] = [
     difficulty: 'Médio',
     ageGroup: '6-14 anos',
     icon: '📝',
+    image: 'https://i.pinimg.com/736x/d6/5d/29/d65d290001e1c6c918e1c9e88bc8cf2f.jpg',
     benefits: ['Expande vocabulário', 'Melhora ortografia', 'Desenvolve raciocínio', 'Pensamento estratégico'],
     link: '/jogos/forca',
     tags: ['palavras', 'vocabulário', 'estratégia'],
@@ -66,6 +69,7 @@ const games: Game[] = [
     difficulty: 'Difícil',
     ageGroup: '8+ anos',
     icon: '🧩',
+    image: 'https://i.pinimg.com/1200x/52/e9/19/52e919d0f00674d7c61e9f5576c9e92e.jpg',
     benefits: ['Desenvolve lógica espacial', 'Melhora coordenação', 'Estimula persistência', 'Planejamento estratégico'],
     link: '/jogos/quebra-cabeca',
     tags: ['lógica', 'espacial', 'estratégia'],
@@ -79,6 +83,7 @@ const games: Game[] = [
     difficulty: 'Médio',
     ageGroup: '6-8 anos',
     icon: '🗺️',
+    image: 'https://i.pinimg.com/1200x/e4/b7/a4/e4b7a42853ca0dff791824b373f89d11.jpg',
     benefits: ['Melhora leitura', 'Desenvolve concentração', 'Pensamento estratégico', 'Vocabulário'],
     link: '/jogos/labirinto',
     tags: ['linguagem', 'leitura', 'concentração'],
@@ -92,6 +97,7 @@ const games: Game[] = [
     difficulty: 'Médio',
     ageGroup: '6-8 anos',
     icon: '🔢',
+    image: 'https://i.pinimg.com/736x/33/ca/7a/33ca7aaf89d2cd9bc8a42a06361d864f.jpg',
     benefits: ['Raciocínio matemático', 'Sequenciamento', 'Lógica numérica', 'Concentração'],
     link: '/jogos/numerico',
     tags: ['números', 'raciocínio', 'sequência'],
@@ -105,6 +111,7 @@ const games: Game[] = [
     difficulty: 'Fácil',
     ageGroup: '3-5 anos',
     icon: '🎨',
+    image: 'https://i.pinimg.com/736x/a7/eb/d3/a7ebd3eb1646b50f91be0a00849d7dca.jpg',
     benefits: ['Reconhecimento de cores', 'Atenção visual', 'Associação', 'Coordenação'],
     link: '/jogos/cores',
     tags: ['cores', 'reconhecimento', 'atenção'],
@@ -118,6 +125,7 @@ const games: Game[] = [
     difficulty: 'Médio',
     ageGroup: '6-8 anos',
     icon: '😊',
+    image: 'https://i.pinimg.com/736x/63/5b/b8/635bb894b77cf88c78873aa43f02150e.jpg',
     benefits: ['Inteligência emocional', 'Reconhecimento facial', 'Habilidades sociais', 'Empatia'],
     link: '/jogos/expressoes',
     tags: ['emoções', 'social', 'reconhecimento'],
@@ -131,6 +139,7 @@ const games: Game[] = [
     difficulty: 'Difícil',
     ageGroup: '9-12 anos',
     icon: '🔍',
+    image: 'https://i.pinimg.com/1200x/ed/d5/22/edd522724cd1ca7174acd2fb3c6f18a6.jpg',
     benefits: ['Atenção ao detalhe', 'Concentração', 'Observação', 'Paciência'],
     link: '/jogos/atencao',
     tags: ['atenção', 'concentração', 'detalhes'],
@@ -144,6 +153,7 @@ const games: Game[] = [
     difficulty: 'Médio',
     ageGroup: '6-8 anos',
     icon: '🦁',
+    image: 'https://i.pinimg.com/736x/61/fd/c1/61fdc19fabf4204dfc279dc3e1eb1d56.jpg',
     benefits: ['Classificação', 'Lógica', 'Conhecimento geral', 'Categorização'],
     link: '/jogos/animais',
     tags: ['lógica', 'classificação', 'conhecimento'],
@@ -157,6 +167,7 @@ const games: Game[] = [
     difficulty: 'Fácil',
     ageGroup: '3-5 anos',
     icon: '🔊',
+    image: 'https://i.pinimg.com/736x/14/e4/45/14e445f97510a3de6f53e015ff8b37ab.jpg',
     benefits: ['Percepção auditiva', 'Reconhecimento emocional', 'Associação', 'Concentração'],
     link: '/jogos/sons',
     tags: ['emoções', 'audição', 'reconhecimento'],
@@ -170,6 +181,7 @@ const games: Game[] = [
     difficulty: 'Fácil',
     ageGroup: '3-5 anos',
     icon: '▲',
+    image: 'https://i.pinimg.com/1200x/83/d5/2a/83d52a80d6c73651f76f8ac477b790dd.jpg',
     benefits: ['Percepção espacial', 'Criatividade', 'Coordenação', 'Formas geométricas'],
     link: '/jogos/formas',
     tags: ['formas', 'espacial', 'criatividade'],
@@ -183,48 +195,23 @@ const games: Game[] = [
     difficulty: 'Médio',
     ageGroup: '9-12 anos',
     icon: '🔤',
+    image: 'https://i.pinimg.com/736x/37/9f/17/379f1706d8c796af7a5a3dea9fde7285.jpg',
     benefits: ['Vocabulário', 'Atenção visual', 'Concentração', 'Estratégia'],
     link: '/jogos/caca-palavras',
     tags: ['linguagem', 'vocabulário', 'atenção'],
     estimatedTime: '15-25 min'
-  },
-  {
-    id: 'matematica',
-    title: 'Matemática do Faz de Conta',
-    description: 'Resolva problemas matemáticos com personagens animados. Torna o aprendizado de matemática divertido e envolvente.',
-    category: 'Números',
-    difficulty: 'Médio',
-    ageGroup: '6-8 anos',
-    icon: '🧮',
-    benefits: ['Raciocínio matemático', 'Cálculo', 'Resolução de problemas', 'Criatividade'],
-    link: '/jogos/matematica',
-    tags: ['matemática', 'raciocínio', 'cálculo'],
-    estimatedTime: '10-20 min'
-  },
-  {
-    id: 'qc-animais',
-    title: 'Quebra-Cabeça de Animais',
-    description: 'Monte quebra-cabeças com seus animais favoritos. Desenvolve paciência e coordenação através de imagens atrativas.',
-    category: 'Lógica',
-    difficulty: 'Fácil',
-    ageGroup: '3-5 anos',
-    icon: '🐻',
-    benefits: ['Coordenação', 'Paciência', 'Reconhecimento', 'Concentração'],
-    link: '/jogos/qc-animais',
-    tags: ['lógica', 'animais', 'montagem'],
-    estimatedTime: '10-20 min'
   }
 ];
 
 const categories = [
-  { id: 'Todos', name: 'Todos os Jogos', icon: '🎮' },
-  { id: 'Memória', name: 'Memória', icon: '🧠' },
-  { id: 'Linguagem', name: 'Linguagem', icon: '📝' },
-  { id: 'Lógica', name: 'Lógica', icon: '🧩' },
-  { id: 'Números', name: 'Números', icon: '🔢' },
-  { id: 'Cores', name: 'Cores', icon: '🎨' },
-  { id: 'Emocional', name: 'Emocional', icon: '😊' },
-  { id: 'Atenção', name: 'Atenção', icon: '🔍' }
+  { id: 'Todos', name: 'Todos os Jogos', icon: '' },
+  { id: 'Memória', name: 'Memória', icon: '' },
+  { id: 'Linguagem', name: 'Linguagem', icon: '' },
+  { id: 'Lógica', name: 'Lógica', icon: '' },
+  { id: 'Números', name: 'Números', icon: '' },
+  { id: 'Cores', name: 'Cores', icon: '' },
+  { id: 'Emocional', name: 'Emocional', icon: '' },
+  { id: 'Atenção', name: 'Atenção', icon: '' }
 ];
 
 const pabloEpisodes: VideoEpisode[] = [
@@ -346,17 +333,17 @@ export default function JogosPage() {
           </p>
           
           <div className="jogos-hero-features">
-            <div className="feature-pill">
+            <div className="feature-pill" onClick={() => document.getElementById('games-section')?.scrollIntoView({ behavior: 'smooth' })} style={{ cursor: 'pointer' }}>
               <span className="feature-icon">🎯</span>
-              <span>6 jogos interativos</span>
+              <span>12 jogos interativos</span>
             </div>
-            <div className="feature-pill">
+            <div className="feature-pill" onClick={() => document.getElementById('video-section')?.scrollIntoView({ behavior: 'smooth' })} style={{ cursor: 'pointer' }}>
               <span className="feature-icon">📺</span>
               <span>1 episódio do Pablo</span>
             </div>
-            <div className="feature-pill">
+            <div className="feature-pill" style={{ opacity: '0.7', cursor: 'default' }}>
               <span className="feature-icon">🚀</span>
-              <span>8 em desenvolvimento</span>
+              <span>2 em desenvolvimento</span>
             </div>
           </div>
         </div>
@@ -364,7 +351,9 @@ export default function JogosPage() {
         <div className="jogos-stats-premium">
           <div className="stats-container">
             <div className="jogos-stat-card">
-              <div className="stat-icon">🎮</div>
+              <div className="stat-icon">
+                <img src="https://i.pinimg.com/736x/2a/e3/ca/2ae3ca39528d8ea103aceb1e5a5d19dc.jpg" alt="Jogos Disponíveis" className="stat-icon-img" />
+              </div>
               <div className="stat-content">
                 <span className="stat-number">{gameStats.totalGames}</span>
                 <span className="stat-label">Jogos Disponíveis</span>
@@ -373,7 +362,9 @@ export default function JogosPage() {
             </div>
             
             <div className="jogos-stat-card">
-              <div className="stat-icon">⭐</div>
+              <div className="stat-icon">
+                <img src="https://i.pinimg.com/736x/1b/09/79/1b0979e18c59e4a9c4a941faf86c3acc.jpg" alt="Jogos Explorados" className="stat-icon-img" />
+              </div>
               <div className="stat-content">
                 <span className="stat-number">{gameStats.gamesPlayed}</span>
                 <span className="stat-label">Jogos Explorados</span>
@@ -382,7 +373,9 @@ export default function JogosPage() {
             </div>
             
             <div className="jogos-stat-card">
-              <div className="stat-icon">📊</div>
+              <div className="stat-icon">
+                <img src="https://i.pinimg.com/736x/a1/a1/4a/a1a14adc590134b9c0764e3d5538a678.jpg" alt="Progresso Médio" className="stat-icon-img" />
+              </div>
               <div className="stat-content">
                 <span className="stat-number">{gameStats.averageScore}%</span>
                 <span className="stat-label">Progresso Médio</span>
@@ -457,7 +450,7 @@ export default function JogosPage() {
         </section>
 
         {/* Grid de Jogos */}
-        <section className="jogos-grid-premium">
+        <section id="games-section" className="jogos-grid-premium">
           <div className="grid-container">
             {filteredGames.map(game => (
               <div key={game.id} className="game-card-premium">
@@ -468,7 +461,11 @@ export default function JogosPage() {
                 
                 <div className="card-header">
                   <div className="game-icon-wrapper">
-                    <div className="game-icon">{game.icon}</div>
+                    {game.image ? (
+                      <img src={game.image} alt={game.title} className="game-icon-img" />
+                    ) : (
+                      <div className="game-icon">{game.icon}</div>
+                    )}
                     <div className="icon-glow"></div>
                   </div>
                   
@@ -545,7 +542,7 @@ export default function JogosPage() {
         </section>
 
         {/* Seção de Episódios do Pablo */}
-        <section className="pablo-section-premium">
+        <section id="video-section" className="pablo-section-premium">
           <div className="pablo-background">
             <div className="pablo-pattern"></div>
             <div className="pablo-gradient"></div>
@@ -651,15 +648,12 @@ export default function JogosPage() {
               </p>
               <div className="cta-features">
                 <div className="feature-item">
-                  <span className="feature-icon">🧠</span>
                   <span>Educativo</span>
                 </div>
                 <div className="feature-item">
-                  <span className="feature-icon">❤️</span>
                   <span>Inclusivo</span>
                 </div>
                 <div className="feature-item">
-                  <span className="feature-icon">🌟</span>
                   <span>Inspirador</span>
                 </div>
               </div>
@@ -687,7 +681,6 @@ export default function JogosPage() {
           
           <div className="benefits-header">
             <h2 className="benefits-title">
-              <span className="title-icon">🌟</span>
               <span className="title-text">Por Que Nossos Jogos São Especiais?</span>
             </h2>
             <p className="benefits-subtitle">

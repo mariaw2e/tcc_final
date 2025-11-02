@@ -13,7 +13,7 @@
 /* === MAIN CONTAINER === */
 .jogos-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #F6B600 0%, #FFC107 50%, #FFD54F 100%);
+  background: #FFFFFF;
   color: #78350f;
   font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
   position: relative;
@@ -40,7 +40,7 @@
   padding: 6rem 2rem 4rem;
   overflow: hidden;
   z-index: 2;
-  background: transparent;
+  background: linear-gradient(to bottom, #F6B600 0%, #FFC107 30%, #FFD54F 60%, #FFF9E6 85%, #FFFFFF 100%);
 }
 
 .jogos-hero-background {
@@ -253,23 +253,25 @@
   border-radius: 15px;
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 
 .stat-icon-img {
-  width: 60px;
-  height: 60px;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 15px;
   transition: all 0.3s ease;
 }
 
 .jogos-stat-card:hover .stat-icon {
   transform: scale(1.1) rotate(5deg);
   background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .jogos-stat-card:hover .stat-icon-img {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .stat-content {
@@ -429,10 +431,10 @@
 }
 
 .category-pill.active {
-  background: linear-gradient(135deg, #ea580c 0%, #f97316 100%);
-  border-color: rgba(234, 88, 12, 0.5);
+  background: linear-gradient(135deg, #F6B600 0%, #FFC107 100%);
+  border-color: rgba(246, 182, 0, 0.5);
   color: #78350f;
-  box-shadow: 0 4px 20px rgba(249, 115, 22, 0.5);
+  box-shadow: 0 4px 20px rgba(246, 182, 0, 0.5);
 }
 
 .category-icon {
@@ -656,7 +658,7 @@
 }
 
 .game-category-badge {
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #F6B600 0%, #FFC107 100%);
   color: #78350f;
   padding: 0.5rem 1rem;
   border-radius: 15px;
@@ -1319,10 +1321,7 @@
 }
 
 .title-text {
-  background: linear-gradient(135deg, #22c55e 0%, #3b82f6 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #78350f;
 }
 
 .benefits-subtitle {
