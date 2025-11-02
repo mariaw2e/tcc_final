@@ -3,9 +3,9 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 
 interface ArticlePageProps {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
 const getArticleData = (id: string) => {
@@ -81,8 +81,9 @@ const getArticleData = (id: string) => {
   return articles[id as keyof typeof articles]
 }
 
-export default function ArticlePage({ params }: ArticlePageProps) {
-  const article = getArticleData(params.id)
+export default async function ArticlePage({ params }: ArticlePageProps) {
+  const { id } = await params
+  const article = getArticleData(id)
 
   if (!article) {
     return <div>Artigo não encontrado</div>
