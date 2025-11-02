@@ -1,34 +1,18 @@
-import NextAuth from "next-auth"
-import type { NextAuthOptions } from "next-auth"
+import { NextResponse } from 'next/server'
 
-export const authOptions: NextAuthOptions = {
-  providers: [
-    // Authentication providers will be configured later
-    // Add your providers here when environment variables are set up
-  ],
-  pages: {
-    signIn: '/login',
-  },
-  session: {
-    strategy: "jwt",
-  },
-  callbacks: {
-    async session({ session, token }) {
-      if (session?.user && token?.sub) {
-        session.user.id = token.sub
-      }
-      return session
-    },
-    async jwt({ token, user }) {
-      if (user) {
-        token.id = user.id
-      }
-      return token
-    },
-  },
-  secret: process.env.NEXTAUTH_SECRET || "temporary-secret-please-change-in-production",
+// Temporary authentication endpoint - NextAuth will be configured later
+// This prevents build errors on Vercel until authentication is fully set up
+
+export async function GET() {
+  return NextResponse.json({ 
+    message: 'Authentication endpoint - to be configured',
+    status: 'inactive'
+  })
 }
 
-const handler = NextAuth(authOptions)
-
-export { handler as GET, handler as POST }
+export async function POST() {
+  return NextResponse.json({ 
+    message: 'Authentication endpoint - to be configured',
+    status: 'inactive'
+  })
+}
