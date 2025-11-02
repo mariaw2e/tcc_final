@@ -1,59 +1,44 @@
-import NextAuth from "next-auth"
-import GoogleProvider from "next-auth/providers/google"
-import CredentialsProvider from "next-auth/providers/credentials"
-import bcrypt from 'bcryptjs'
+import NextAuth, { AuthOptions } from "next-auth"
+import type { NextAuthOptions } from "next-auth"
 
-export const authOptions = {
+export const authOptions: NextAuthOptions = {
   providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID || "",
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
-    }),
-    CredentialsProvider({
-      name: 'Credentials',
-      credentials: {
-        email: { label: "Email", type: "email" },
-        password: { label: "Senha", type: "password" }
-      },
-      async authorize(credentials) {
-        if (!credentials?.email || !credentials?.password) {
-          throw new Error('Credenciais inválidas')
-        }
-
-        // Aqui você implementará a lógica de verificação do usuário
-        // Por enquanto, vamos usar um usuário de teste
-        const testUser = {
-          id: "1",
-          name: "Usuário Teste",
-          email: "teste@example.com",
-          password: await bcrypt.hash("senha123", 10)
-        }
-
-        const isValid = await bcrypt.compare(
-          credentials.password,
-          testUser.password
-        )
-
-        if (isValid) {
-          return {
-            id: testUser.id,
-            name: testUser.name,
-            email: testUser.email
-          }
-        }
-
-        return null
-      }
-    })
+    // Providers comentados temporariamente até configuração das variáveis de ambiente
+    // Descomente quando tiver as credenciais configuradas no Vercel
+    
+    // GoogleProvider({
+    //   clientId: process.env.GOOGLE_CLIENT_ID || "",
+    //   clientSecret: process.env.GOOGLE_CLIENT_SECRET || "",
+    // }),
+    
+    // CredentialsProvider({
+    //   name: 'Credentials',
+    //   credentials: {
+    //     email: { label: "Email", type: "email" },
+    //     password: { label: "Senha", type: "password" }
+    //   },
+    //   async authorize(credentials) {
+    //     if (!credentials?.email || !credentials?.password) {
+    //       throw new Error('Credenciais inválidas')
+    //     }
+    //     return null
+    //   }
+    // })
   ],
   pages: {
     signIn: '/login',
-    signUp: '/cadastro',
   },
   callbacks: {
-    async session({ session, token }) {
-      session.user.id = token.sub
+    async session({ session, token }: any) {
+      if (session.user && token.sub) {
+        session.user.id = token.sub
+      }
       return session
     },
   },
+  secret: process.env.NEXTAUTH_SECRET || "fallback-secret-for-development",
 }
+
+const handler = NextAuth(authOptions)
+
+export { handler as GET, handler as POST }
