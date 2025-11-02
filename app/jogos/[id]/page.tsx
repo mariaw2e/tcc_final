@@ -3,9 +3,9 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 
 interface GamePageProps {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
 const getGameData = (id: string) => {
@@ -93,8 +93,9 @@ const getGameData = (id: string) => {
   return games[id as keyof typeof games]
 }
 
-export default function GamePage({ params }: GamePageProps) {
-  const game = getGameData(params.id)
+export default async function GamePage({ params }: GamePageProps) {
+  const { id } = await params
+  const game = getGameData(id)
 
   if (!game) {
     return <div>Jogo não encontrado</div>
