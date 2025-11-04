@@ -23,7 +23,7 @@ export default function Cadastro() {
     const password = formData.get('password') as string
 
     try {
-      const response = await fetch('/api/auth/register', {
+      const response = await fetch('/api/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
