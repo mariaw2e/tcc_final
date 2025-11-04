@@ -136,9 +136,9 @@ export default function Header() {
                   {profileImage ? (
                     <img src={profileImage} alt="Perfil" className="user-avatar-img" />
                   ) : (
-                    <span className="user-initial">{user.name.charAt(0).toUpperCase()}</span>
+                    <span className="user-initial">{user?.name?.charAt(0)?.toUpperCase() || 'U'}</span>
                   )}
-                  <span className="user-name">{user.name.split(' ')[0]}</span>
+                  <span className="user-name">{user?.name?.split(' ')[0] || 'Usuário'}</span>
                 </button>
               </Link>
               <button className="auth-btn logout-btn" onClick={handleLogout}>
