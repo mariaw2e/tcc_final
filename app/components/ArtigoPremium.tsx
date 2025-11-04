@@ -10,22 +10,17 @@ import "./ArtigoPremium.css";
 export default function ArtigoPremium() {
   const [shareModalOpen, setShareModalOpen] = useState(false);
 
-  // Scroll para o topo quando o componente for montado
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const openShareModal = () => {
-    setShareModalOpen(true);
-  };
-
-  const closeShareModal = () => {
-    setShareModalOpen(false);
-  };
+  const openShareModal = () => setShareModalOpen(true);
+  const closeShareModal = () => setShareModalOpen(false);
 
   return (
     <>
       <Header />
+
       <main className="artigo-main">
         {/* Hero Section */}
         <section className="hero" id="heroSection">
@@ -67,10 +62,7 @@ export default function ArtigoPremium() {
               onClick={() => {
                 const articleStart = document.getElementById("articleStart");
                 if (articleStart) {
-                  articleStart.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
+                  articleStart.scrollIntoView({ behavior: "smooth" });
                 }
               }}
               aria-label="Rolar para o conteúdo do artigo"
@@ -92,8 +84,8 @@ export default function ArtigoPremium() {
           </div>
         </section>
 
-        {/* Main Content */}
-        <main className="main-content" id="articleStart">
+        {/* Main Content — trocado <main> por <div> */}
+        <div className="main-content" id="articleStart">
           <div className="breadcrumb">
             <a href="#">Início</a>
             <span className="divider">/</span>
@@ -105,10 +97,7 @@ export default function ArtigoPremium() {
           <article className="article-content">
             <p>
               A neurodivergência é um conceito que reconhece e valoriza as
-              diferenças neurológicas entre as pessoas, entendendo que condições
-              como autismo, TDAH, dislexia e outras não são necessariamente
-              "distúrbios" a serem curados, mas variações naturais do cérebro
-              humano.
+              diferenças neurológicas entre as pessoas...
             </p>
 
             <img
@@ -120,23 +109,18 @@ export default function ArtigoPremium() {
             />
 
             <p>
-              O termo "neurodivergente" foi cunhado pela socióloga Judy Singer
-              na década de 1990 e ganhou força com o movimento de direitos dos
-              autistas. Estima-se que 15-20% da população mundial seja
-              neurodivergente.
+              O termo "neurodivergente" foi cunhado pela socióloga Judy Singer...
             </p>
 
             <div className="highlight-box animate__animated" id="highlightBox">
               <p>
-                "A neurodivergência não é um defeito, mas uma diferença que pode
-                ser uma força poderosa quando reconhecida e apoiada
-                adequadamente." - Dr. Thomas Armstrong
+                "A neurodivergência não é um defeito, mas uma diferença..."
               </p>
             </div>
 
             <p>
               No ambiente educacional, a compreensão da neurodivergência está
-              levando a abordagens mais inclusivas.
+              levando a abordagens mais inclusivas...
             </p>
 
             <img
@@ -146,16 +130,78 @@ export default function ArtigoPremium() {
               id="articleImage2"
               loading="lazy"
             />
+
+            <p>
+              No local de trabalho, empresas inovadoras estão descobrindo que
+              equipes neurodiversas são mais criativas...
+            </p>
+
+            <p>
+              No entanto, os desafios permanecem. Muitos neurodivergentes ainda
+              enfrentam estigma...
+            </p>
           </article>
 
-          {/* Seção de Quiz */}
+          {/* Curiosidades */}
+          <section className="proposta-section animate__animated" id="propostaSection">
+            <h2 className="proposta-title">Curiosidades sobre Neurodivergência</h2>
+            <div className="curiosidades-list">
+              <div className="curiosidade-item">
+                <h3>1. Grandes mentes neurodivergentes</h3>
+                <p>
+                  Einstein, Mozart e Tesla apresentavam traços neurodivergentes...
+                </p>
+              </div>
+              <div className="curiosidade-item">
+                <h3>2. Habilidades especiais</h3>
+                <p>
+                  Pessoas neurodivergentes frequentemente desenvolvem
+                  “superpoderes” cognitivos...
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Conclusão */}
+          <section className="conclusao-section animate__animated">
+            <h2 className="proposta-title">Conclusão</h2>
+            <div className="conclusao-content">
+              <p>
+                A neurodivergência representa uma parte essencial da diversidade
+                humana...
+              </p>
+              <div className="highlight-box">
+                <p>
+                  "A verdadeira medida de uma sociedade é como ela trata seus
+                  membros mais diferentes."
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Quiz */}
           <section className="quiz-section animate__animated">
             <h2 className="proposta-title">Teste Seu Conhecimento</h2>
             <div className="quiz-container">
               <Quiz />
             </div>
           </section>
-        </main>
+
+          {/* Artigos sugeridos */}
+          <section className="artigos-sugeridos animate__animated" id="artigosSugeridos">
+            <h2 className="proposta-title">Continue Explorando</h2>
+            <div className="sugeridos-grid">
+              <div className="artigo-sugerido">
+                <img
+                  src="https://t3.ftcdn.net/jpg/08/34/96/16/240_F_834961628_1JgTl2RHCXvRbicYjGuTgNtozShtRYRh.jpg"
+                  alt="TDAH"
+                  loading="lazy"
+                />
+                <h3>TDAH: Mitos e Verdades</h3>
+              </div>
+            </div>
+          </section>
+        </div>
 
         {/* Botões flutuantes */}
         <div
@@ -169,7 +215,7 @@ export default function ArtigoPremium() {
             zIndex: 9999,
           }}
         >
-          {/* Botão Voltar ao Topo */}
+          {/* Voltar ao topo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             style={{
@@ -184,8 +230,8 @@ export default function ArtigoPremium() {
               border: "none",
               boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
               cursor: "pointer",
-              transition: "all 0.3s ease",
               position: "relative",
+              transition: "all 0.3s ease",
             }}
             onMouseOver={(e) => {
               const target = e.currentTarget as HTMLElement;
@@ -230,9 +276,7 @@ export default function ArtigoPremium() {
                 padding: "0.5rem 1rem",
                 borderRadius: "6px",
                 fontSize: "0.8rem",
-                whiteSpace: "nowrap",
                 opacity: "0",
-                pointerEvents: "none",
                 transition: "all 0.3s ease",
               }}
               className="tooltip"
@@ -241,7 +285,7 @@ export default function ArtigoPremium() {
             </div>
           </button>
 
-          {/* Botão Compartilhar */}
+          {/* Compartilhar */}
           <button
             onClick={openShareModal}
             style={{
@@ -256,8 +300,8 @@ export default function ArtigoPremium() {
               border: "none",
               boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
               cursor: "pointer",
-              transition: "all 0.3s ease",
               position: "relative",
+              transition: "all 0.3s ease",
             }}
             onMouseOver={(e) => {
               const target = e.currentTarget as HTMLElement;
@@ -303,9 +347,7 @@ export default function ArtigoPremium() {
                 padding: "0.5rem 1rem",
                 borderRadius: "6px",
                 fontSize: "0.8rem",
-                whiteSpace: "nowrap",
                 opacity: "0",
-                pointerEvents: "none",
                 transition: "all 0.3s ease",
               }}
               className="tooltip"
@@ -315,6 +357,7 @@ export default function ArtigoPremium() {
           </button>
         </div>
       </main>
+
       <Footer />
       <ShareModal isOpen={shareModalOpen} onClose={closeShareModal} />
     </>
