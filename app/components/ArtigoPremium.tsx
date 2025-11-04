@@ -373,16 +373,24 @@ export default function ArtigoPremium() {
               position: "relative"
             }}
             onMouseOver={(e) => {
-              e.currentTarget.style.transform = "translateY(-5px)";
-              e.currentTarget.style.boxShadow = "0 6px 15px rgba(0,0,0,0.3)";
-              e.currentTarget.querySelector(".tooltip").style.opacity = "1";
-              e.currentTarget.querySelector(".tooltip").style.right = "70px";
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = "translateY(-5px)";
+              target.style.boxShadow = "0 6px 15px rgba(0,0,0,0.3)";
+              const tooltip = target.querySelector(".tooltip") as HTMLElement | null;
+              if (tooltip) {
+                tooltip.style.opacity = "1";
+                tooltip.style.right = "70px";
+              }
             }}
             onMouseOut={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "0 4px 10px rgba(0,0,0,0.2)";
-              e.currentTarget.querySelector(".tooltip").style.opacity = "0";
-              e.currentTarget.querySelector(".tooltip").style.right = "60px";
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = "translateY(0)";
+              target.style.boxShadow = "0 4px 10px rgba(0,0,0,0.2)";
+              const tooltip = target.querySelector(".tooltip") as HTMLElement | null;
+              if (tooltip) {
+                tooltip.style.opacity = "0";
+                tooltip.style.right = "60px";
+              }
             }}
           >
             <svg
@@ -437,16 +445,24 @@ export default function ArtigoPremium() {
               position: "relative"
             }}
             onMouseOver={(e) => {
-              e.currentTarget.style.transform = "translateY(-5px)";
-              e.currentTarget.style.boxShadow = "0 6px 15px rgba(0,0,0,0.3)";
-              e.currentTarget.querySelector(".tooltip").style.opacity = "1";
-              e.currentTarget.querySelector(".tooltip").style.right = "70px";
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = "translateY(-5px)";
+              target.style.boxShadow = "0 6px 15px rgba(0,0,0,0.3)";
+              const tooltip = target.querySelector(".tooltip") as HTMLElement | null;
+              if (tooltip) {
+                tooltip.style.opacity = "1";
+                tooltip.style.right = "70px";
+              }
             }}
             onMouseOut={(e) => {
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "0 4px 10px rgba(0,0,0,0.2)";
-              e.currentTarget.querySelector(".tooltip").style.opacity = "0";
-              e.currentTarget.querySelector(".tooltip").style.right = "60px";
+              const target = e.currentTarget as HTMLElement;
+              target.style.transform = "translateY(0)";
+              target.style.boxShadow = "0 4px 10px rgba(0,0,0,0.2)";
+              const tooltip = target.querySelector(".tooltip") as HTMLElement | null;
+              if (tooltip) {
+                tooltip.style.opacity = "0";
+                tooltip.style.right = "60px";
+              }
             }}
           >
             <svg
