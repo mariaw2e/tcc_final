@@ -10,7 +10,6 @@ import "./ArtigoPremium.css";
 export default function ArtigoPremium() {
   const [shareModalOpen, setShareModalOpen] = useState(false);
 
-  // Scroll para o topo quando o componente for montado
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -27,7 +26,6 @@ export default function ArtigoPremium() {
     <>
       <Header />
       <main className="artigo-main">
-        {/* Hero Section - Conteúdo modificado */}
         <section className="hero" id="heroSection">
           <img
             src="/imagens/img13.jpg"
@@ -92,7 +90,6 @@ export default function ArtigoPremium() {
           </div>
         </section>
 
-        {/* Main Content - Conteúdo modificado */}
         <main className="main-content" id="articleStart">
           <div className="breadcrumb">
             <a href="#">Início</a>
@@ -175,10 +172,7 @@ export default function ArtigoPremium() {
             </p>
           </article>
 
-          <section
-            className="proposta-section animate__animated"
-            id="propostaSection"
-          >
+          <section className="proposta-section animate__animated" id="propostaSection">
             <h2 className="proposta-title">
               Curiosidades sobre Neurodivergência
             </h2>
@@ -221,7 +215,6 @@ export default function ArtigoPremium() {
             </div>
           </section>
 
-          {/* Seção de Conclusão */}
           <section className="conclusao-section animate__animated">
             <h2 className="proposta-title">Conclusão</h2>
             <div className="conclusao-content">
@@ -258,20 +251,14 @@ export default function ArtigoPremium() {
             </div>
           </section>
 
-          {/* Seção de Quiz Interativo */}
           <section className="quiz-section animate__animated">
             <h2 className="proposta-title">Teste Seu Conhecimento</h2>
             <div className="quiz-container">
-              {/* Quiz com React Hooks para gerenciar estado */}
               <Quiz />
             </div>
           </section>
 
-          {/* Seção de Artigos Sugeridos */}
-          <section
-            className="artigos-sugeridos animate__animated"
-            id="artigosSugeridos"
-          >
+          <section className="artigos-sugeridos animate__animated" id="artigosSugeridos">
             <h2 className="proposta-title">Continue Explorando</h2>
             <div className="sugeridos-grid">
               <div
@@ -342,7 +329,7 @@ export default function ArtigoPremium() {
           </section>
         </main>
 
-        {/* Botões flutuantes com estilo inline para garantir visibilidade */}
+        {/* Botões flutuantes com correções de hover */}
         <div
           style={{
             position: "fixed",
@@ -373,21 +360,21 @@ export default function ArtigoPremium() {
               position: "relative"
             }}
             onMouseOver={(e) => {
-              const target = e.currentTarget as HTMLElement;
+              const target = e.currentTarget;
               target.style.transform = "translateY(-5px)";
               target.style.boxShadow = "0 6px 15px rgba(0,0,0,0.3)";
-              const tooltip = target.querySelector(".tooltip") as HTMLElement | null;
-              if (tooltip) {
+              const tooltip = target.querySelector(".tooltip");
+              if (tooltip instanceof HTMLElement) {
                 tooltip.style.opacity = "1";
                 tooltip.style.right = "70px";
               }
             }}
             onMouseOut={(e) => {
-              const target = e.currentTarget as HTMLElement;
+              const target = e.currentTarget;
               target.style.transform = "translateY(0)";
               target.style.boxShadow = "0 4px 10px rgba(0,0,0,0.2)";
-              const tooltip = target.querySelector(".tooltip") as HTMLElement | null;
-              if (tooltip) {
+              const tooltip = target.querySelector(".tooltip");
+              if (tooltip instanceof HTMLElement) {
                 tooltip.style.opacity = "0";
                 tooltip.style.right = "60px";
               }
@@ -445,21 +432,21 @@ export default function ArtigoPremium() {
               position: "relative"
             }}
             onMouseOver={(e) => {
-              const target = e.currentTarget as HTMLElement;
+              const target = e.currentTarget;
               target.style.transform = "translateY(-5px)";
               target.style.boxShadow = "0 6px 15px rgba(0,0,0,0.3)";
-              const tooltip = target.querySelector(".tooltip") as HTMLElement | null;
-              if (tooltip) {
+              const tooltip = target.querySelector(".tooltip");
+              if (tooltip instanceof HTMLElement) {
                 tooltip.style.opacity = "1";
                 tooltip.style.right = "70px";
               }
             }}
             onMouseOut={(e) => {
-              const target = e.currentTarget as HTMLElement;
+              const target = e.currentTarget;
               target.style.transform = "translateY(0)";
               target.style.boxShadow = "0 4px 10px rgba(0,0,0,0.2)";
-              const tooltip = target.querySelector(".tooltip") as HTMLElement | null;
-              if (tooltip) {
+              const tooltip = target.querySelector(".tooltip");
+              if (tooltip instanceof HTMLElement) {
                 tooltip.style.opacity = "0";
                 tooltip.style.right = "60px";
               }
@@ -499,9 +486,10 @@ export default function ArtigoPremium() {
             </div>
           </button>
         </div>
+
+        <ShareModal isOpen={shareModalOpen} onClose={closeShareModal} />
       </main>
       <Footer />
-      <ShareModal isOpen={shareModalOpen} onClose={closeShareModal} />
     </>
   );
 }
