@@ -13,12 +13,19 @@ export async function POST(request: Request) {
       )
     }
 
-    // Por enquanto, apenas simula sucesso
+    // Por enquanto, simula sucesso
     // Quando reconectar o banco, você implementará a lógica real aqui
+    // Retorna um nome padrão, mas o frontend buscará do localStorage
+    const defaultName = email.split('@')[0]
+    
     return NextResponse.json(
       { 
         message: 'Login realizado com sucesso!',
-        user: { email }
+        user: { 
+          id: Date.now(),
+          name: defaultName.charAt(0).toUpperCase() + defaultName.slice(1),
+          email 
+        }
       },
       { status: 200 }
     )

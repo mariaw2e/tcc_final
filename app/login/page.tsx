@@ -39,7 +39,17 @@ export default function Login() {
       }
 
       // Login bem-sucedido
-      localStorage.setItem('user', JSON.stringify(data.user))
+      // Buscar dados do cadastro no localStorage
+      const savedUserData = localStorage.getItem(`user_${email}`)
+      if (savedUserData) {
+        const { name } = JSON.parse(savedUserData)
+        // Usar o nome do cadastro
+        localStorage.setItem('user', JSON.stringify({ ...data.user, name }))
+      } else {
+        // Se não encontrar, usar o que veio da API
+        localStorage.setItem('user', JSON.stringify(data.user))
+      }
+      
       router.push('/')
     } catch (error) {
       setError('Ocorreu um erro ao fazer login')

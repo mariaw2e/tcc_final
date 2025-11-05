@@ -38,7 +38,10 @@ export default function Cadastro() {
         return
       }
 
-      // Cadastro bem-sucedido
+      // Cadastro bem-sucedido - salvar dados no localStorage para simular banco
+      const userData = { name, email, password }
+      localStorage.setItem(`user_${email}`, JSON.stringify(userData))
+      
       alert('Conta criada com sucesso! Faça login para continuar.')
       router.push('/login')
     } catch (error) {

@@ -128,7 +128,7 @@ export default function Perfil() {
               ) : profileImage ? (
                 <img src={profileImage} alt="Foto de perfil" className="avatar-image" />
               ) : (
-                <span className="avatar-icon">{user.name.charAt(0).toUpperCase()}</span>
+                <span className="avatar-icon">{user?.name?.charAt(0)?.toUpperCase() || 'U'}</span>
               )}
               <div className="avatar-overlay">
                 <span className="camera-icon">📷</span>
