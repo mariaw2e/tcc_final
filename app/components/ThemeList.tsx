@@ -15,7 +15,11 @@ interface Artigo {
   premium: boolean;
 }
 
-export default function ThemeList() {
+interface ThemeListProps {
+  searchTerm?: string;
+}
+
+export default function ThemeList({ searchTerm = "" }: ThemeListProps) {
   const [artigos, setArtigos] = useState<Artigo[]>([]);
   const [mostrarTodos, setMostrarTodos] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -37,7 +41,19 @@ export default function ThemeList() {
     fetchArtigos();
   }, []);
 
-  const artigosVisiveis = mostrarTodos ? artigos : artigos.slice(0, 6);
+  // Filtrar artigos com base no termo de pesquisa
+  const artigosFiltrados = artigos.filter((artigo) => {
+    if (!searchTerm) return true;
+    
+    const termoBusca = searchTerm.toLowerCase();
+    const tituloMatch = artigo.titulo.toLowerCase().includes(termoBusca);
+    const descricaoMatch = artigo.descricao?.toLowerCase().includes(termoBusca) || false;
+    const categoriaMatch = artigo.categoria?.toLowerCase().includes(termoBusca) || false;
+    
+    return tituloMatch || descricaoMatch || categoriaMatch;
+  });
+
+  const artigosVisiveis = mostrarTodos ? artigosFiltrados : artigosFiltrados.slice(0, 6);
 
   const handleVerMais = () => {
     setMostrarTodos(true);
@@ -78,6 +94,14 @@ export default function ThemeList() {
     <section className="temas-populares" id="temas-populares">
       <div className="container">
         <h2>Temas Populares</h2>
+        {searchTerm && (
+          <p style={{ textAlign: 'center', marginBottom: '1rem', color: '#666' }}>
+            {artigosFiltrados.length > 0 
+              ? `${artigosFiltrados.length} artigo(s) encontrado(s) para "${searchTerm}"`
+              : `Nenhum artigo encontrado para "${searchTerm}"`
+            }
+          </p>
+        )}
         <br></br>
         <div className="temas-grid">
           {artigosVisiveis.map((artigo) => (
@@ -102,7 +126,7 @@ export default function ThemeList() {
           ))}
         </div>
 
-        {artigos.length > 6 && (
+        {artigosFiltrados.length > 6 && (
           <div className="botoes-controle">
             {!mostrarTodos ? (
               <a

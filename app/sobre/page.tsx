@@ -45,7 +45,10 @@ export default function Sobre() {
                 um suporte que vai além do convencional, trabalhando para que todos se sintam
                 valorizados e capacitados a viver uma vida plena e satisfatória.
               </p>
-              <button className="bg-[#FFC107] text-black px-8 py-3 rounded-md font-bold hover:bg-[#ffb300] transition-colors shadow-md">
+              <button 
+                className="bg-[#FFC107] text-black px-8 py-3 rounded-md font-bold hover:bg-[#ffb300] transition-colors shadow-md"
+                onClick={() => window.location.href = '/artigos'}
+              >
                 Saiba mais
               </button>
             </motion.div>
@@ -66,7 +69,10 @@ export default function Sobre() {
                 e recursos especializados para promover o bem-estar, o desenvolvimento pessoal e a
                 autonomia de nossos usuários.
               </p>
-              <button className="bg-[#FFC107] text-black px-8 py-3 rounded-md font-bold hover:bg-[#ffb300] transition-colors shadow-md">
+              <button 
+                className="bg-[#FFC107] text-black px-8 py-3 rounded-md font-bold hover:bg-[#ffb300] transition-colors shadow-md"
+                onClick={() => window.location.href = '/jogos'}
+              >
                 Saiba mais
               </button>
             </motion.div>
@@ -85,7 +91,10 @@ export default function Sobre() {
                 podem se conectar, compartilhar experiências e encontrar suporte mútuo. Acreditamos
                 na força da comunidade e na importância de construir redes de apoio.
               </p>
-              <button className="bg-[#FFC107] text-black px-8 py-3 rounded-md font-bold hover:bg-[#ffb300] transition-colors shadow-md">
+              <button 
+                className="bg-[#FFC107] text-black px-8 py-3 rounded-md font-bold hover:bg-[#ffb300] transition-colors shadow-md"
+                onClick={() => window.location.href = '/depoimentos'}
+              >
                 Saiba mais
               </button>
             </motion.div>

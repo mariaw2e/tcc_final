@@ -67,7 +67,17 @@ export default function HeroBanner() {
         <div className="banner-content">
           <h2 className="banner-title">{slides[currentSlide].title}</h2>
           <p className="banner-description">{slides[currentSlide].description}</p>
-          <a href="#servicos" className="banner-btn">Saiba Mais</a>
+          <button 
+            className="banner-btn"
+            onClick={() => {
+              const servicosSection = document.getElementById('servicos');
+              if (servicosSection) {
+                servicosSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
+          >
+            Saiba Mais
+          </button>
         </div>
 
         {/* Botões de Navegação */}

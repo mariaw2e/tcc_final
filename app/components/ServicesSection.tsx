@@ -5,7 +5,7 @@ import './ServicesSection.css';
 
 export default function ServicesSection() {
   return (
-    <section className="servicos">
+    <section className="servicos" id="servicos">
       <div className="container">
         <h3>Nossos Serviços</h3>
         <div className="cards">
