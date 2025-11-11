@@ -64,6 +64,10 @@ export async function GET(request: NextRequest) {
   } catch (error) {
     console.error('Erro ao buscar artigos (usando dados mock):', error);
     
+    // Obter limit do searchParams no catch também
+    const { searchParams } = new URL(request.url);
+    const limitValue = parseInt(searchParams.get('limit') || '10');
+    
     // Retornar dados mock quando o banco não estiver disponível
     const mockArtigos = [
       {
@@ -117,9 +121,9 @@ export async function GET(request: NextRequest) {
     ];
     
     return NextResponse.json({
-      artigos: mockArtigos.slice(0, limit),
+      artigos: mockArtigos.slice(0, limitValue),
       total: mockArtigos.length,
-      limit,
+      limit: limitValue,
       offset: 0,
       hasMore: false
     });
