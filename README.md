@@ -1,8 +1,8 @@
-# BrainWave Connect - Next.js# Getting Started with Create React App
+BrainWave Connect - Next.js# Getting Started with Create React App
 
 Um espaço de informação, acolhimento e conexão para pessoas com autismo, TDAH e outras condições relacionadas à neurodiversidade.This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## 🚀 Tecnologias## Available Scripts
+ Tecnologias## Available Scripts
 
 - **Next.js 15.5.4** - Framework React com renderização do lado do servidorIn the project directory, you can run:
 
@@ -14,13 +14,13 @@ Um espaço de informação, acolhimento e conexão para pessoas com autismo, TDA
 
 Runs the app in the development mode.\
 
-## 📋 Pré-requisitosOpen [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ Pré-requisitosOpen [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 - Node.js 18+ The page will reload when you make changes.\
 
 - npm ou yarnYou may also see any lint errors in the console.
 
-## 🔧 Instalação### `npm test`
+ Instalação### `npm test`
 
 ````bashLaunches the test runner in the interactive watch mode.\
 
@@ -74,7 +74,7 @@ Abra [http://localhost:3000](http://localhost:3000) no navegador para ver o resu
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-## 📁 Estrutura do Projeto
+ Estrutura do Projeto
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
@@ -120,20 +120,20 @@ BrainWave-Connect-React/### Code Splitting
 
 
 
-## 🎯 Funcionalidades### `npm run build` fails to minify
+ Funcionalidades### `npm run build` fails to minify
 
 
 
-- ✅ Navegação entre páginasThis section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-  Navegação entre páginasThis section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-- ✅ Lista de temas sobre neurodivergência
-- ✅ Artigos detalhados com conteúdo educacional
-- ✅ Quiz interativo para testar conhecimentos
-- ✅ Formulário de contato
-- ✅ FAQ (Perguntas Frequentes)
-- ✅ Design responsivo
+-  Lista de temas sobre neurodivergência
+-  Artigos detalhados com conteúdo educacional
+-  Quiz interativo para testar conhecimentos
+-  Formulário de contato
+-  FAQ (Perguntas Frequentes)
+-  Design responsivo
 
-## 🔜 Próximos Passos
+ Próximos Passos
 
 - [ ] Integração com banco de dados (Prisma + PostgreSQL)
 - [ ] Sistema de autenticação de usuários
@@ -142,19 +142,19 @@ BrainWave-Connect-React/### Code Splitting
 - [ ] Favoritos e bookmarks
 - [ ] Newsletter
 
-## 👥 Contribuindo
+ Contribuindo
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests.
 
-## 📄 Licença
+ Licença
 
 Este projeto está sob a licença MIT.
 
-## 📧 Contato
+ Contato
 
 Para mais informações, entre em contato através do formulário no site ou visite nosso GitHub.
 
 ---
 
-**Desenvolvido com ❤️ para promover a inclusão e compreensão da neurodiversidade**
+Desenvolvido para promover a inclusão e compreensão da neurodiversidade.
 ````
